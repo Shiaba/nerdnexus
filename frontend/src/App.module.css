@@ -1,0 +1,36 @@
+.App {
+    font-family: "Noto Sans", sans-serif;
+    background-color: white;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: gray;
+    transition: color ease-in-out 0.1s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:hover i {
+    color: lightseagreen;
+    transition: color ease-in-out 0.1s;
+}
+
+i {
+    color: gray;
+    font-size: 2rem;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+i:hover {
+    cursor: pointer;
+    transition: color ease-in-out 0.1s;
+    color: lightseagreen;
+}
