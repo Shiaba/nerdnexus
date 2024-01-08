@@ -20,9 +20,9 @@ function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
 
 
-    const [signInData, setSignInData] = useState({ 
-        username: "", 
-        password: "", 
+    const [signInData, setSignInData] = useState({
+        username: "",
+        password: "",
     });
     const { username, password } = signInData;
 
@@ -30,20 +30,20 @@ function SignInForm() {
 
     const history = useHistory();
 
-    const handleChange = (event) => { 
-        setSignInData({ 
-            ...signInData, 
+    const handleChange = (event) => {
+        setSignInData({
+            ...signInData,
             [event.target.name]: event.target.value,
-        }); 
+        });
     };
 
-        const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        try { 
-            const {data} =   await axios.post("/dj-rest-auth/login/", signInData);
+        try {
+            const { data } = await axios.post("/dj-rest-auth/login/", signInData);
             setCurrentUser(data.user);
             history.push("/");
-        } catch (err) { 
+        } catch (err) {
             setErrors(err.response?.data);
         }
     };
@@ -61,7 +61,7 @@ function SignInForm() {
                             <Form.Label className="d-none">username</Form.Label>
                             <Form.Control
                                 className={styles.Input}
-                                type="text" 
+                                type="text"
                                 placeholder="Username"
                                 name="username"
                                 value={username}
@@ -86,7 +86,7 @@ function SignInForm() {
                         {errors.password?.map((message, idx) => (
                             <Alert key={idx} variant="warning">{message}</Alert>
                         ))}
-                        
+
                         <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
                             Sign in
                         </Button>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
@@ -13,8 +13,8 @@ const SignUpForm = () => {
         username: '',
         password1: '',
         password2: '',
-    })
-    const {username, password1, password2} = signUpData;
+    });
+    const { username, password1, password2 } = signUpData;
 
     const [errors, setErrors] = useState({});
 
@@ -30,13 +30,13 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-           await axios.post('dj-rest-auth/registration/', signUpData)
-           history.push('/signin');
-        } catch(err){
-            setErrors(err.response?.data)
+            await axios.post('dj-rest-auth/registration/', signUpData);
+            history.push('/signin');
+        } catch (err) {
+            setErrors(err.response?.data);
         }
-    }
-    
+    };
+
     // Sign up form
 
     return (
@@ -50,8 +50,8 @@ const SignUpForm = () => {
                             <Form.Label className="d-none">username</Form.Label>
                             <Form.Control
                                 className={styles.Input}
-                                type="text" 
-                                placeholder="Username" 
+                                type="text"
+                                placeholder="Username"
                                 name="username"
                                 value={username}
                                 onChange={handleChange}
@@ -65,8 +65,8 @@ const SignUpForm = () => {
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control
                                 className={styles.Input}
-                                type="password" 
-                                placeholder="Password" 
+                                type="password"
+                                placeholder="Password"
                                 name="password1"
                                 value={password1}
                                 onChange={handleChange}
