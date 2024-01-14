@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -89,9 +89,26 @@ const NavBar = () => {
             <Container>
                 <NavLink to="/">
                     <Navbar.Brand>
-                        <img src={logo} alt="logo" height="60" />
+                        <img src={logo} alt="logo" height="50" />
                     </Navbar.Brand>
                 </NavLink>
+
+                <NavDropdown title="Categories">
+                    <NavDropdown.Item>
+                    <NavLink className={styles.NavDropdown} to="/category/movies">
+                        Movies
+                    </NavLink>
+                    <NavLink className={styles.NavDropdown} to="/category/games">
+                        Games
+                    </NavLink>
+                    <NavLink className={styles.NavDropdown} to="/category/books">
+                        Books
+                    </NavLink>
+                    <NavLink className={styles.NavDropdown} to="/category/comics">
+                        Comics
+                    </NavLink>
+                </NavDropdown.Item>
+                </NavDropdown>
                 {currentUser && addPostIcon}
                 <Navbar.Toggle
                 ref={ref}
