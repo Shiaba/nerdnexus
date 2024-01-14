@@ -95,20 +95,30 @@ const NavBar = () => {
 
                 <NavDropdown title="Categories">
                     <NavDropdown.Item>
-                    <NavLink className={styles.NavDropdown} to="/category/movies">
-                        Movies
-                    </NavLink>
-                    <NavLink className={styles.NavDropdown} to="/category/games">
-                        Games
-                    </NavLink>
-                    <NavLink className={styles.NavDropdown} to="/category/books">
-                        Books
-                    </NavLink>
-                    <NavLink className={styles.NavDropdown} to="/category/comics">
-                        Comics
-                    </NavLink>
-                </NavDropdown.Item>
+                        <NavLink className={styles.NavDropdown} to="/category/movies">
+                            Movies
+                        </NavLink>
+                    </NavDropdown.Item>
+
+                    <NavDropdown.Item>
+                        <NavLink className={styles.NavDropdown} to="/category/games">
+                            Games
+                        </NavLink>
+                    </NavDropdown.Item>
+                    
+                    <NavDropdown.Item>
+                        <NavLink className={styles.NavDropdown} to="/category/books">
+                            Books
+                        </NavLink>
+                    </NavDropdown.Item>
+
+                    <NavDropdown.Item>
+                        <NavLink className={styles.NavDropdown} to="/category/comics">
+                            Comics
+                        </NavLink>
+                    </NavDropdown.Item>
                 </NavDropdown>
+                
                 {currentUser && addPostIcon}
                 <Navbar.Toggle
                 ref={ref}
