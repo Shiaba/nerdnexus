@@ -26,8 +26,9 @@ function PostCreateForm() {
         title: "",
         content: "",
         image: "",
+        category: "",
     });
-    const { title, content, image } = postData;
+    const { title, content, image, category } = postData;
     
     const imageInput = useRef(null);
     const history = useHistory();
@@ -56,6 +57,7 @@ function PostCreateForm() {
         formData.append("title", title);
         formData.append("content", content);
         formData.append("image", imageInput.current.files[0]);
+        formData.append("category", category);
         
         try {
             const { data } = await axiosReq.post("/posts/", formData);
@@ -79,6 +81,26 @@ function PostCreateForm() {
             />
         </Form.Group>
         {errors?.title?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+                {message}
+            </Alert>
+        ))}
+
+        <Form.Group>
+        <Form.Label>Category</Form.Label>
+        <Form.Control
+            as="select"
+            name="category"
+            value={category}
+            onChange={handleChange}
+        >
+            <option value="movies">Movies</option>
+            <option value="games">Games</option>
+            <option value="books">Books</option>
+            <option value="comics">Comics</option>
+        </Form.Control>
+        </Form.Group>
+        {errors?.category?.map((message, idx) => (
             <Alert variant="warning" key={idx}>
                 {message}
             </Alert>

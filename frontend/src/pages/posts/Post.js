@@ -22,11 +22,16 @@ const Post = (props) => {
         updated_at,
         postPage,
         setPosts,
+        category,
     } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
+
+    const capitalize = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }
 
     const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
@@ -97,7 +102,6 @@ const Post = (props) => {
                 <Card.Img src={image} alt={title} />
             </Link>
 
-            <Card.Body>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 {content && <Card.Text>{content}</Card.Text>}
                 <div className={styles.PostBar}>
@@ -130,6 +134,11 @@ const Post = (props) => {
                 </Link>
                 {comments_count}
                 </div>
+
+                <Card.Body>
+                {category && (
+                <h4 ><strong>{capitalize(category)}</strong></h4>
+            )}
             </Card.Body>
         </Card>
     );
