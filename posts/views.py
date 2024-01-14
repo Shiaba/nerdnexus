@@ -4,6 +4,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from nerdnexus_api.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
+from rest_framework.response import Response
 
 
 class PostList(generics.ListCreateAPIView):
@@ -27,6 +28,7 @@ class PostList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
+        'category',
     ]
     ordering_fields = [
         'likes_count',
@@ -46,3 +48,18 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
         likes_count=Count('likes', distinct=True),
         comments_count=Count('comment', distinct=True)
     ).order_by('-created_at')
+
+
+class PostCategoryView(generics.ListCreateAPIView):
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Post.objects.all()
+
+    def post(self, request, format=None):
+        data = self.request.data
+        category = data['category']
+        queryset = Post.objects.order_by('-created_at').filter(category__iexact=category)  # noqa
+
+        serializer = PostSerializer(queryset, many=True)
+
+        return Response(serializer.data)

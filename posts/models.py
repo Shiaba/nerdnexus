@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-"""
-Need to add categories to model & category options
-"""
+class Categories(models.TextChoices):
+    MOVIE = 'movies'
+    GAME = 'games'
+    BOOK = 'books'
+    COMIC = 'comics'
 
 
 class Post(models.Model):
@@ -15,6 +17,8 @@ class Post(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../post_default', blank=True
     )
+    category = models.CharField(
+        max_length=50, choices=Categories.choices, default=Categories.MOVIE)
 
     class Meta:
         ordering = ['-created_at']

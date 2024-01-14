@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from posts.models import Post
+from posts.models import Post, Categories
 from likes.models import Like
 
 
@@ -44,5 +44,5 @@ class PostSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
             'title', 'content', 'image', 'like_id',
-            'likes_count', 'comments_count',
+            'likes_count', 'comments_count', 'category',
         ]
