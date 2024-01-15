@@ -28,7 +28,7 @@ const NavBar = () => {
         <NavLink className={styles.NavLink}
             activeClassName={styles.Active}
             to="/posts/create">
-            <i className="fa-regular fa-square-plus"></i>Add post
+            <i className="fa-regular fa-square-plus"></i>AddPost
         </NavLink>
     );
 
@@ -52,7 +52,7 @@ const NavBar = () => {
                 className={styles.NavLink}
                 to="/"
                 onClick={handleSignOut}>
-                <i className="fa-solid fa-right-to-bracket"></i>Sign out
+                <i className="fa-solid fa-right-to-bracket"></i>SignOut
             </NavLink>
 
             <NavLink 
@@ -68,13 +68,13 @@ const NavBar = () => {
             <NavLink className={styles.NavLink}
                 activeClassName={styles.Active}
                 to="/signin">
-                <i className="fa-solid fa-right-to-bracket"></i>Sign in
+                <i className="fa-solid fa-right-to-bracket"></i>Sign In
             </NavLink>
 
             <NavLink className={styles.NavLink}
                 activeClassName={styles.Active}
                 to="/signup">
-                <i className="fa-solid fa-user-plus"></i>Sign up
+                <i className="fa-solid fa-user-plus"></i>Sign Up
             </NavLink>
         </>
     );
@@ -93,39 +93,37 @@ const NavBar = () => {
                         <img src={logo} alt="logo" height="50" />
                     </Navbar.Brand>
                 </NavLink>
-
-                <NavDropdown title="Categories">
-                    <NavDropdown.Item>
-                        <NavLink className={styles.NavDropdown} to="/category/movies">
-                            Movies
-                        </NavLink>
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Item>
-                        <NavLink className={styles.NavDropdown} to="/category/games">
-                            Games
-                        </NavLink>
-                    </NavDropdown.Item>
-                    
-                    <NavDropdown.Item>
-                        <NavLink className={styles.NavDropdown} to="/category/books">
-                            Books
-                        </NavLink>
-                    </NavDropdown.Item>
-
-                    <NavDropdown.Item>
-                        <NavLink className={styles.NavDropdown} to="/category/comics">
-                            Comics
-                        </NavLink>
-                    </NavDropdown.Item>
-                </NavDropdown>
-                
                 {currentUser && addPostIcon}
                 <Navbar.Toggle
                 ref={ref}
                 onClick={() => setExpanded(!expanded)} 
                 aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
+                    <NavDropdown title="Categories">
+                        <NavDropdown.Item>
+                            <NavLink className={styles.NavDropdown} to="/category/movies">
+                                Movies
+                            </NavLink>
+                        </NavDropdown.Item>
+
+                        <NavDropdown.Item>
+                            <NavLink className={styles.NavDropdown} to="/category/games">
+                                Games
+                            </NavLink>
+                        </NavDropdown.Item>
+                        
+                        <NavDropdown.Item>
+                            <NavLink className={styles.NavDropdown} to="/category/books">
+                                Books
+                            </NavLink>
+                        </NavDropdown.Item>
+
+                        <NavDropdown.Item>
+                            <NavLink className={styles.NavDropdown} to="/category/comics">
+                                Comics
+                            </NavLink>
+                        </NavDropdown.Item>
+                    </NavDropdown>
                     <Nav className="ml-auto text-left">
                         <NavLink exact className={styles.NavLink}
                             activeClassName={styles.Active}
