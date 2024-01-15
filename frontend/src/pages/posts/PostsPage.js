@@ -70,7 +70,17 @@ function PostsPage({ message, filter = "" }) {
                         placeholder="Search posts" 
                     />
                 </Form>
-
+                <Container className={appStyles.Content}>
+                    <div className={appStyles.Welcome}>
+                    <p>Welcome to NerdNexus!</p>
+                    <p>Here we have a little corner for us who might like to post about 
+                        what our favorite movie or game is,
+                    </p>
+                    <p>ask others about what comics or books they should read,</p>
+                    <p>or just interact in the comments with other enthusiast.</p>
+                    </div>
+                </Container>
+                <br></br>
                 {hasLoaded ? (
                     <>
                         {posts.results.length ? (

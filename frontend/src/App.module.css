@@ -9,11 +9,17 @@
 }
 
 .Content {
-    background-color: white;
+    background-color: rgb(197, 228, 225);
     padding: 10px;
     border-radius: 10px;
     border: 2px solid lightgray;
 }
+
+.Welcome {
+    text-align: center;
+    font-size: 18px;
+}
+
 
 .FillerImage {
     object-fit: cover;
