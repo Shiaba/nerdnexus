@@ -3,7 +3,7 @@ import { axiosReq } from "../api/axiosDefaults";
 
 export const fetchMoreData = async (resource, setResource) => {
     try {
-        console.log(resource.next)
+        // console.log(resource.next)
         let url=new URL(resource.next)
         let correctUrl = resource.next.split(url.origin)[1]
         const { data } = await axiosReq.get(correctUrl);
