@@ -72,7 +72,7 @@ function PostsPage({ message, filter = "" }) {
                 </Form>
                 <Container className={appStyles.Content}>
                     <div className={appStyles.Welcome}>
-                    <p>Welcome to NerdNexus!</p>
+                    <h4>Welcome to NerdNexus!</h4>
                     <p>Here we have a little corner for us who might like to post about 
                         what our favorite movie or game is,
                     </p>
