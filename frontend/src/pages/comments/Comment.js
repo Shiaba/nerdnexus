@@ -8,10 +8,11 @@ import CommentEditForm from "./CommentEditForm";
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+import LikeComment from "./LikeComment";
 
 const Comment = (props) => {
     const { profile_id, profile_image, owner, updated_at, content,
-        id, setPost, setComments, } = props;
+        id, setPost, setComments, likecomment_count } = props;
     
     const [showEditForm, setShowEditForm] = useState(false);
     const currentUser = useCurrentUser();
@@ -59,6 +60,7 @@ const Comment = (props) => {
                         <p>{content}</p>
                     )}
                 </Media.Body>
+                <LikeComment id={id} count={likecomment_count} />
                 {is_owner && !showEditForm && (
                     <MoreDropdown
                         handleEdit={() => setShowEditForm(true)}
