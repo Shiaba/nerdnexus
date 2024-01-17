@@ -103,12 +103,7 @@ const NavBar = () => {
                     </Navbar.Brand>
                 </NavLink>
                 {currentUser && addPostIcon}
-                <Navbar.Toggle
-                ref={ref}
-                onClick={() => setExpanded(!expanded)} 
-                aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <NavDropdown title="Categories">
+                <NavDropdown title="Categories">
                         <NavDropdown.Item>
                             <NavLink className={styles.NavDropdown} to="/category/movies">
                                 Movies
@@ -120,7 +115,7 @@ const NavBar = () => {
                                 Games
                             </NavLink>
                         </NavDropdown.Item>
-                        
+
                         <NavDropdown.Item>
                             <NavLink className={styles.NavDropdown} to="/category/books">
                                 Books
@@ -133,6 +128,12 @@ const NavBar = () => {
                             </NavLink>
                         </NavDropdown.Item>
                     </NavDropdown>
+                <Navbar.Toggle
+                ref={ref}
+                onClick={() => setExpanded(!expanded)} 
+                aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    
                     <Nav className="ml-auto text-left">
                         <NavLink exact className={styles.NavLink}
                             activeClassName={styles.Active}

@@ -31,12 +31,12 @@ const Post = (props) => {
 
     const capitalize = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
-        }
+    }
 
     const handleEdit = () => {
         history.push(`/posts/${id}/edit`);
     };
-    
+
     const handleDelete = async () => {
         try {
             await axiosRes.delete(`/posts/${id}/`);
@@ -68,9 +68,9 @@ const Post = (props) => {
             setPosts((prevPosts) => ({
                 ...prevPosts,
                 results: prevPosts.results.map((post) => {
-                return post.id === id
-                    ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                    : post;
+                    return post.id === id
+                        ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                        : post;
                 }),
             }));
         } catch (err) {
@@ -78,7 +78,7 @@ const Post = (props) => {
         }
     };
 
-    return ( 
+    return (
         <Card className={styles.Post}>
             <Card.Body>
                 <Media className="align-items-center justify-content-between">
@@ -89,7 +89,7 @@ const Post = (props) => {
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
                         {is_owner && postPage && (
-                            <MoreDropdown 
+                            <MoreDropdown
                                 handleEdit={handleEdit}
                                 handleDelete={handleDelete}
                             />
@@ -102,25 +102,25 @@ const Post = (props) => {
                 <Card.Img src={image} alt={title} />
             </Link>
 
-                {title && <Card.Title className="text-center"><br></br>{title}</Card.Title>}
-                {content && <Card.Text>{content}</Card.Text>}
-                <div className={styles.PostBar}>
-                    {is_owner ? (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>You can't like your own post!</Tooltip>}
-                        >
-                            <i className="fa-regular fa-heart" />
-                        </OverlayTrigger>
-                    ) : like_id ? (
-                        <span onClick={handleUnlike}>
-                            <i className={`fa-solid fa-heart ${styles.Heart}`} />
-                        </span>
-                    ) : currentUser ? (
-                        <span onClick={handleLike}>
-                            <i className={`fa-regular fa-heart ${styles.HeartOutline}`} />
-                        </span>
-                    ) : (
+            {title && <Card.Title className="text-center"><br></br>{title}</Card.Title>}
+            {content && <Card.Text>{content}</Card.Text>}
+            <div className={styles.PostBar}>
+                {is_owner ? (
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                    >
+                        <i className="fa-regular fa-heart" />
+                    </OverlayTrigger>
+                ) : like_id ? (
+                    <span onClick={handleUnlike}>
+                        <i className={`fa-solid fa-heart ${styles.Heart}`} />
+                    </span>
+                ) : currentUser ? (
+                    <span onClick={handleLike}>
+                        <i className={`fa-regular fa-heart ${styles.HeartOutline}`} />
+                    </span>
+                ) : (
                     <OverlayTrigger
                         placement="top"
                         overlay={<Tooltip>Log in to like posts!</Tooltip>}
@@ -133,12 +133,12 @@ const Post = (props) => {
                     <i className="fa-regular fa-comments" />
                 </Link>
                 {comments_count}
-                </div>
+            </div>
 
-                <Card.Body>
+            <Card.Body>
                 {category && (
-                <h4 ><strong>{capitalize(category)}</strong></h4>
-            )}
+                    <h4 ><strong>{capitalize(category)}</strong></h4>
+                )}
             </Card.Body>
         </Card>
     );

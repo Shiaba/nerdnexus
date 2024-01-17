@@ -40,7 +40,7 @@ function PostPage() {
                 // console.log(err);
             }
         };
-    
+
         handleMount();
     }, [id]);
 
