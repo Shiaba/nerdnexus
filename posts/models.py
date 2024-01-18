@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Categories(models.TextChoices):
     MOVIE = 'movies'
     GAME = 'games'

@@ -49,8 +49,8 @@ JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH = {
     'USE_JWT': True,
-    'JWT_AUTH_HTTPONLY':False
-} 
+    'JWT_AUTH_HTTPONLY': False
+}
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'nerdnexus_api.serializers.CurrentUserSerializer'

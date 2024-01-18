@@ -3,7 +3,6 @@ from rest_framework import serializers
 from .models import LikeComment
 
 
-
 class LikeCommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 

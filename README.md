@@ -6,7 +6,7 @@ NerdNexus has a user-friendly interface so navigating the site, posts, creating 
 
 <br>
 
-![Full page]()
+![Full page](media/amiresponsive/am_i_responsive.png)
 
 [You can view this site here](https://nerdnexus-a8d8c616a59c.herokuapp.com/)
 
@@ -50,110 +50,148 @@ NerdNexus has a user-friendly interface so navigating the site, posts, creating 
 
 # Features
 ### Welcoming page
- - This section welcomes users to the site & gives a small information of what users can do.
-<br>
 
-![Welcome Text]()
+- This section welcomes users to the site & gives a small information of what users can do.
+
+![Welcome Text](media/features/welcome.png)
 
 
 ### Navbar
+
 - The navigation bar is fully reponsive on all screen sizes.
 - Clicking on any of the locations on the navbar will lead the user to that specific location.
-- If user is not logged in or has an account, they will only only get specific locations to navigate through. The same is for logged in users (image 3 & 4).
-- Logged in users will not see sign up or log in options when already logged in & also get two new options instead.
+- If user is not logged in or has an account, they will only only get specific locations to navigate through. The same is for logged in users.
+- Logged in users will not see sign up or sign in options when already logged in & also get two new options instead.
+- At the category dropdown menu, the user can choose between 4 categories which will narrow down the posts they see to the chosen category.
+- The searchbar will allow the user to search for categories, author & title.
 
-<br>
+![Navbar](media/features/navbar_loggedin.png)
+![Navbar](media/features/navbar_loggedout.png)
+![Category](media/features/category_dropdown.png)
 
-![Navbar]()
-
-
+![Searchbar](media/features/searchbar.png)
 
 
 ### Create Post
- - Only logged in users can create reviews.
- - If something is not typed in corrctly, user will get a warning instruction, where they can type it in correctly.
- - When done, they can submit the review through the button at the bottom.
-<br>
 
-![Create Post]()
+- Only logged in users can create posts.
+- If image or title isn't typed in, the user will get a warning.
+
+![Create Post](media/features/add_post.png)
+![Create Post](media/features/add_post_warning.png)
+
+### Edit/ Delete Post
+
+- This page gives the author the option to edit or delete their post by pressing the three dots button on the right side of the post. 
+- When clicking the delete button, it removes the post right away.
+- If the user wants to edit their post, they will be redirected to the edit page where all of the previously written post will be there until the user makes changes or presses the cancel button which will cancel any changes made & redirect the user to the previous page.
+
+![Edit Post](media/features/post_edit_options.png)
+![Edit Post](media/features/post_edit.png)
 
 
+### Post
+
+- This is how a post looks like after beaing created
+
+![Post](media/features/post.png)
 
 ### Sign Up
- - The form enables the user to create an account.
- - Email is optional & not required.
- - If the user already has an account, they can press the "Log in here!" link to be lead to the login page.
- - An alert that the user has signed in will be displayed on the screen.
-<br>
 
-![Sign up]()
+- The form enables the user to create an account.
+- If the user already has an account, they can press the "Sign in here" link to be lead to the login page.
+- If the user skips writing username or writes the "confirm passwords" incorrectly, they will get an alert.
+
+![Sign up](/media/features/sign_up.png)
 
 
 ### Login
- - The form enables the user to log in to their account.
- - Logging in will give the user the oppertunity to create reviews, comment & like reviews, as well as edit/delete their own reviews if they wish to. 
- - If the user doesn't have an account, they can press the "Sign up here!" link to be lead to the Sign up page.
- - An alert that the user has signed in will be displayed on the screen.
-<br>
 
-![Login]()
+- The form enables the user to log in to their account.
+- If the user doesn't have an account, they can press the "Sign up here" link to be lead to the Sign up page.
+- If the user writes their password or username incorrectly, they will get an alert warning.
+
+![Login](media/features/sign_in.png)
 
 
 
 ### Logout
- - The form enables the user to logout of their account.
- - An alert that the user has logged out will be displayed on the screen.
-<br>
 
-![Logout]()
+- The user will log out as soon as the button is pressed & redirected to the home page.
 
-
-
-
-
-### Edit & Delete Buttons
- - The creator of the review must be logged in for them to be able to see these buttons.
- - If the edit button is pressed, the user will be redirected to the edit page.
- - If the delete button is pressed, the user will be redirected to the delete page.
-<br>
-
-![Edit & Delete Buttons]()
+![Logout](media/features/signout.png)
 
 
 
 ### Like & Comment Counter
  - Users will see the counters like normal but cant like anything unless logged in. 
- - If the user presses the like button, the hand will change color to black & the like will add +1 to the counter. If pressed again, the counter will go down -1 or until 0 & the color will revert back to white.
- - Comment counter will only go up in number if comments have been written & approved by admin.
- 
-<br>
+ - When hovering on the heart button, the outline color will be red until pressed.
+ - If the user presses the like button, the heart will change color to red & the like will add +1 to the counter. If pressed again, the counter will go down -1 or until 0 & the outline color will revert back to gray.
+ - Comment counter will only go up in number if comments have been written.
 
-![Like & Comment Counter]()
+![Like & Comment Counter](media/features/like_comment_count.png)
+![Like & Comment Counter](media/features/like_comment_count_hover.png)
+![Like & Comment Counter](media/features/like_comment_count_liked.png)
 
 
 
 ### Post Comment Section
  - Only users can leave comments on reviews.
- - If not logged in, leave comment section will not be visible.
-<br>
+ - If not logged in, "my comment" section will not be visible.
 
-![Leave Comment Section]()
-
+![Leave Comment Section](media/features/leave_comments.png)
 
 
 ### Comment Section
- - Comment section can be seen by any user(logged in or not) of the site.
- - Admin will have to approve any comment made.
+ - Comment section can be seen by any user(logged in or not) on the site.
  - Comment section shows
    - Name
-   - Date/time created
+   - Time it was made
+   - Like button
    - Comment
-<br>
+ - The author of the comment can decide to delete or edit their comment.
+ - When deleting tyhe comment it will disapear right away, if editing, the comment will still have the previous written comment until the user decides to change & save or cancel editing.
 
-![Comment Section]()
+![Comment Section](media/features/comments.png)
+
+![Comment Section](media/features/comment_options.png)
+
+![Comment Section](media/features/comment_edit.png)
+
+
+### Popular Profiles
+
+- Popular profiles will add the profile with most likes on the top of the list.
+
+![Popular Profiles](media/features/popular_profiles.png)
 
 
 
+### Profile Page
+
+- This is the users page, here they can see how many posts they've made, how many followers they have, how many they are following, their bio information & the possibility to edit their profile by the three dots on the right. 
+
+![Profile Page](media/features/profile_page.png)
+
+- By pressing the three dots, the user can decide to edit profile, change username or change password. 
+
+![Profile Option](media/features/profile_option.png)
+
+- Here the user can change their image, change their bio or cancel the changes.
+
+![Profile Edit](media/features/profile_edit.png)
+
+- The user can change to a new username as long as it's available.
+
+![Profile Edit Name](media/features/profile_edit_name.png)
+
+- The user can change to a new password.
+
+![Profile Edit Password](media/features/profile_edit_password.png)
+
+- When looking at another users profile, the user will see the same things as in their own except the edit button which is replaced with a "Follow" or "Unfollow" button.
+
+![Profile Others](media/features/others_profile.png)
 
 
 ## Features yet to add
@@ -200,9 +238,12 @@ This project was designed using Agile methodology, utilising the Kanban Board in
 
 
 ## Wireframes
-I created the flowchart on [wireframe.cc](https://wireframe.cc/), then printed the creation instead of saving it.
 
-- [Wireframe]()
+I created the backend diagram from [dbdiagram](https://dbdiagram.io/home):
+- [Diagram](media/wireframes/diagram-backend.png)
+
+The wireframe was made from [wireframe.cc](https://wireframe.cc/):
+- [Wireframe](media/wireframes/wireframe_main_site.png)
 
 ## Font & Color Scheme
 
@@ -241,20 +282,42 @@ Used to store PostgreSQL database.
 
 ## Libraries, Frameworks & Programming Languages Used
 
+- [React](https://react.dev/)
+- [React Bootstrap](https://react-bootstrap.netlify.app/)
 - [Python](https://www.python.org/)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Django 4.2.7](https://docs.djangoproject.com/en/4.2/releases/4.0/)
+- [Django](https://docs.djangoproject.com/en/4.2/releases/3.2.4/)
+- [Djangorestframework](https://pypi.org/project/djangorestframework/)
 - [Django Allauth](https://docs.allauth.org/en/latest/)
-- [Django Summernote](<https://summernote.org/>)
-- [Django Crispy Forms](<https://django-crispy-forms.readthedocs.io/en/latest/#>)
-- [Crispy Bootstrap 5](<https://pypi.org/project/crispy-bootstrap5/>)
+- [Pillow](https://pypi.org/project/pillow/)
 - [Psycopg2](<https://pypi.org/project/psycopg2/>)
 - [Gunicorn](<https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/gunicorn/>)
 - [Whitenoise](https://whitenoise.readthedocs.io/en/latest/)
+- [Djangorestframework Simplejwt](https://pypi.org/project/djangorestframework-simplejwt/)
+- [Urllib3](https://pypi.org/project/urllib3/)
 
 
 ## Re-usable components
-- 
+
+`Postspage:`
+- The postspage is a reused in feed, liked, category & search filter since they display the posts that Postspage has.
+
+`Asset:`
+- This component is used in Feed, Liked, postspage or where the spinner is used.
+
+`NavBar`
+- NavBar is displayed in every page which makes it an reusable component.
+
+`Avatar`
+- Avatar is wherever Navbar is so it is a very reusable component.
+
+`MoreDropdown`
+- More dropdown is used in the pages where the edit posts, comments & profile can be edited or deleted.
+- ex. PostDetail page, Profile page, comment section.
+
+`Post`
+- This has likes, handle edit/ delete which is reused in almost all of the pages for example it's on Postdetail page or Postspage.
+
 
 [Back to top](#contents)
 
@@ -270,26 +333,43 @@ A full summary of manual testing can be found [here](TESTING.md).
 
 ## Validator testing
 
-### CI Python Linter:
-
+### Eslint
+![]()
 
 ### Python syntax checker
 
-![]()
+- I had a few whitespace warnings but besides that, all was fine except a few "line too long" warnings.
 
+- The urls.py only had "line too long" after checking:
+[NerdNexus api url](media/validator/nerdnexus_api_url.png)
+
+- settings.py had a few "line too long" after fixing some whitespace issues:
+[NerdNexus api settings](media/validator/nerdnexus_api_settings.png)
 
 ### W3C Jigsaw (CSS) 
- []()
+I checked all of the css on frontend & got no errors from any of them.
 
-
-### W3C Validator (HTML)
-- Add validator tests here
-    - []()
+[W3C CSS](media/validator/w3c_css.png)
 
 
 ### Accessibility
- - Add lighthouse tests here
- - []()
+ - Here are the lighthouse tests for mobile & fullscreen:
+    - [Add post](media/lighthouse/addpost.png)
+    - [Add post mobile](media/lighthouse/addpost_mobile.png)
+    - [Feed](media/lighthouse/feed.png)
+    - [Feed mobile](media/lighthouse/feed_mobile.png)
+    - [Home](media/lighthouse/home.png)
+    - [Home mobile](media/lighthouse/home_mobile.png)
+    - [Liked](media/lighthouse/liked.png)
+    - [Liked mobile](media/lighthouse/liked_mobile.png)
+    - [Post Detail](media/lighthouse/post_detail.png)
+    - [Post Detail mobile](media/lighthouse/post_detail_mobile.png)
+    - [Profile Page](media/lighthouse/profile_page.png)
+    - [Profile Page mobile](media/lighthouse/profile_page_mobile.png)
+    - [Sign in](media/lighthouse/signin.png)
+    - [Sign in mobile](media/lighthouse/signin_mobile.png)
+    - [Sign up](media/lighthouse/signup.png)
+    - [Sign up mobile](media/lighthouse/signup_mobile.png)
 
 [Back to top](#contents)
 
@@ -334,10 +414,9 @@ No unsolved bug
 - Create a new Heroku app.
 - Name app name & choose region.
 - Go to settings, add:
-    - KEY: Cloudinary_URL, VALUE(Your cloudinary url)
-    - KEY: Database_URL, VALUE(Your Postgres url)
-    - KEY: PORT, VALUE: 8000
- 
+    - KEY: Cloudinary_URL, VALUE (Your cloudinary url)
+    - KEY: Database_URL, VALUE (Your Postgres url)
+
 - On deployment method, github is chosen.
 - Search repository name.
 
